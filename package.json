@@ -1,0 +1,26 @@
+{
+  "name": "trashfire",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "are you serious rn"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kmoe/trashfire.git"
+  },
+  "author": "Katy Moe <katy@katy.moe> (http://katy.moe)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kmoe/trashfire/issues"
+  },
+  "homepage": "https://github.com/kmoe/trashfire#readme",
+  "dependencies": {
+    "hapi": "^13.4.0",
+    "inert": "^4.0.0",
+    "request": "^2.72.0",
+    "sanitize-html": "^1.11.4",
+    "socket.io": "^1.4.6"
+  }
+}

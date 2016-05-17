@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NFC 2FA demo</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.0.26/css/bulma.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <style>
+        .logs {
+            font-family: 'Ubuntu Mono', sans-serif;
+        }
+        footer {
+            font-size: 77%;
+        }
+    </style>
+</head>
+<body class="layout-default page-grid">
+<section class="section hero is-warning is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                🔥Trashfire🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+            </h1>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <ul id="box" class="logs">
+            <li>messages go here</li>
+        </ul>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="content">
+            <p>
+                <strong>Trashfire</strong> by <a href="http://katy.moe">Katy Moe</a>. The <a href="https://github.com/kmoe/trashfire">source code</a> is licensed
+                <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var socket = io();
+    socket.on('log', function(message){
+        var box = document.getElementById('box');
+
+        box.innerHTML = box.innerHTML + '<li>' + message + '</li>';
+    });
+</script>
+</body>
+</html>

@@ -1,6 +1,7 @@
 'use strict';
 
 const Hapi = require('hapi');
+const Boom = require('boom');
 const request = require('request');
 const path = require('path');
 const moment = require('moment');
@@ -58,8 +59,13 @@ server.route({
   method: 'POST',
   path: '/logs',
   handler: (request, reply) => {
-    log(request.payload.message);
-    return reply('ok');
+    if(request.payload) {
+      log(request.payload.message);
+      return reply('ok');
+    } else {
+      log('invalid request received');
+      return reply(Boom.badRequest('sorry'));
+    }
   }
 })
 

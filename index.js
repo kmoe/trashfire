@@ -9,6 +9,7 @@ const sanitizeHtml = require('sanitize-html');
 const server = new Hapi.Server({
   connections: {
     routes: {
+      cors: true,
       files: {
         relativeTo: path.join(__dirname, 'app')
       }
